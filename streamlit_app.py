@@ -8,16 +8,16 @@ def generate_random_numbers(n=6, min_val=1, max_val=45):
 
 def get_color(number):
     if 1 <= number <= 10:
-        return 'yellow'
+        return '#F7C600'  # 부드러운 노란색
     elif 11 <= number <= 20:
-        return 'blue'
+        return '#4A90E2'  # 부드러운 파란색
     elif 21 <= number <= 30:
-        return 'red'
+        return '#E94E77'  # 부드러운 빨간색
     elif 31 <= number <= 40:
-        return 'gray'
+        return '#9B9B9B'  # 부드러운 회색
     elif 41 <= number <= 45:
-        return 'green'
-    return 'black'  # 기본 색상
+        return '#4CAF50'  # 부드러운 녹색
+    return '#000000'  # 기본 색상 (검은색)
 
 def plot_numbers_with_colors(numbers):
     fig, ax = plt.subplots()

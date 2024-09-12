@@ -11,6 +11,7 @@ def plot_numbers_with_colors(numbers):
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 5)
     ax.axis('off')
+    ax.set_aspect('equal')  # 축의 비율을 같게 설정
 
     colors = np.random.rand(6, 3)  # 랜덤 색상 생성
     for i, (number, color) in enumerate(zip(numbers, colors)):
@@ -24,7 +25,6 @@ st.title('랜덤 로또 번호 생성기')
 
 if st.button('번호 생성하기'):
     numbers = generate_random_numbers()
-    st.write('생성된 번호:', numbers)
 
     fig = plot_numbers_with_colors(numbers)
     st.pyplot(fig)

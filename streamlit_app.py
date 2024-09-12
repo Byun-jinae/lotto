@@ -9,14 +9,14 @@ def generate_random_numbers(n=6, min_val=1, max_val=45):
 def plot_numbers_with_colors(numbers):
     fig, ax = plt.subplots()
     ax.set_xlim(0, 10)
-    ax.set_ylim(0, 10)
+    ax.set_ylim(0, 5)
     ax.axis('off')
 
     colors = np.random.rand(6, 3)  # 랜덤 색상 생성
     for i, (number, color) in enumerate(zip(numbers, colors)):
-        circle = plt.Circle((5, 9 - i * 2), 0.8, color=color, ec='black')
+        circle = plt.Circle((i * 1.5 + 1, 2), 0.8, color=color, ec='black')
         ax.add_artist(circle)
-        ax.text(5, 9 - i * 2, str(number), fontsize=16, ha='center', va='center', color='black')
+        ax.text(i * 1.5 + 1, 2, str(number), fontsize=16, ha='center', va='center', color='black')
 
     return fig
 

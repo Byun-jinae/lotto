@@ -38,7 +38,6 @@ st.title('랜덤 로또 번호 생성기')
 
 if st.button('번호 생성하기'):
     numbers = generate_random_numbers()
-    st.write('생성된 번호:', numbers)
 
     fig = plot_numbers_with_colors(numbers)
     st.pyplot(fig)

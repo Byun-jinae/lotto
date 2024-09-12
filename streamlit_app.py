@@ -28,9 +28,9 @@ def plot_numbers_with_colors(numbers):
 
     for i, number in enumerate(numbers):
         color = get_color(number)
-        circle = plt.Circle((i * 1.5 + 1, 2), 0.8, color=color, ec='black')
+        circle = plt.Circle((i * 1.5 + 1, 2), 0.8, color=color, ec='black', linewidth=2)
         ax.add_artist(circle)
-        ax.text(i * 1.5 + 1, 2, str(number), fontsize=16, ha='center', va='center', color='black')
+        ax.text(i * 1.5 + 1, 2, str(number), fontsize=20, ha='center', va='center', color='white', weight='bold')
 
     return fig
 
@@ -38,6 +38,7 @@ st.title('랜덤 로또 번호 생성기')
 
 if st.button('번호 생성하기'):
     numbers = generate_random_numbers()
-    
+    st.write('생성된 번호:', numbers)
+
     fig = plot_numbers_with_colors(numbers)
     st.pyplot(fig)
